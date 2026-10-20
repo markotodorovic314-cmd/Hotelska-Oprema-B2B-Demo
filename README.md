@@ -1,31 +1,31 @@
 # Hotelska oprema — B2B partner portal
 
-Prilagođeni prototip za razgovor sa Dejanom Savićem. Fokus je na ponovljenim nabavkama uniformi kod stalnih hotelskih i ugostiteljskih kupaca, uz pregled pilot grupe koji pomaže da se proveri interesovanje pre šire primene.
+Prilagođeni prototip za razgovor sa Dejanom Savićem. Fokus je na ponovljenim nabavkama uniformi kod stalnih hotelskih i ugostiteljskih kupaca, uz odvojene naloge kupaca i administraciju.
 
 ## Brzo pokretanje
 
-Raspakujte ZIP i otvorite `index.html` u modernom pregledaču. Nisu potrebni instalacija, build, server, lozinka ni registracija. Za najbolji pregled preporučen je Chrome, Edge ili Firefox.
+Raspakujte ZIP u nov, prazan folder. Otvorite folder `Hotelska-Oprema-Demo`, pa `index.html` u modernom pregledaču. Nisu potrebni instalacija, build, server ni registracija. Za najbolji pregled preporučen je Chrome, Edge ili Firefox.
 
-Portal odmah otvara ilustrativni nalog **Hotel Aurora**. Dugme **Promeni nalog** u levom meniju prikazuje druge kupce. Dugme **Administracija** u gornjem desnom uglu otvara Dejanov prikaz. Na telefonu je levi meni dostupan kroz dugme sa tri linije.
+Portal prvo prikazuje demo prijavu. Unesite **bilo koje neprazno korisničko ime i lozinku**. Unos se ne šalje i ne čuva. Zatim izaberite bilo kog od pet kupaca ili administraciju. Svaki kupac je aktivan i ima primer porudžbine. **Odjavite se** pri dnu levog menija vraća ekran za prijavu. Korpe različitih kupaca se čuvaju odvojeno. Dugme **Promeni nalog** u levom meniju prikazuje druge kupce. Dugme **Administracija** u gornjem desnom uglu otvara Dejanov prikaz. Na telefonu je levi meni dostupan kroz dugme sa tri linije.
 
 ## GitHub Pages
 
 1. Napravite novi GitHub repozitorijum, npr. `Hotelska-Oprema-B2B-Demo`.
-2. Raspakujte ZIP i ubacite **njegov sadržaj** u koren repozitorijuma. `index.html` mora biti direktno u korenu, uz `app.js`, `data.js`, `styles.css` i folder `assets`.
+2. Otvorite folder `Hotelska-Oprema-Demo` unutar ZIP-a i ubacite **njegov sadržaj** u koren repozitorijuma. `index.html` mora biti direktno u korenu, uz `app.js`, `data.js`, `styles.css` i folder `assets`.
 3. Otvorite **Settings → Pages**.
 4. Za Source izaberite **Deploy from a branch**.
 5. Izaberite granu **main**, folder **/(root)** i kliknite Save.
 6. Kada GitHub završi objavu, otvorite link koji se pojavi na toj stranici.
 
-Sve putanje su relativne i rade i kada je demo u podfolderu GitHub Pages sajta. Fotografije su uključene u ZIP; portal ih ne učitava sa tuđeg sajta. Aplikacija nema CDN ili druge spoljne programske zavisnosti.
+Sve putanje su relativne i rade i kada je demo u podfolderu GitHub Pages sajta. Fotografije su uključene u ZIP i dodatno ugrađene u `data.js`, zajedno sa logotipom. Zato prikaz slika ne zavisi od toga da li je `assets/` folder prenesen u potpunosti. Portal ih ne učitava sa tuđeg sajta. Aplikacija nema CDN ili druge spoljne programske zavisnosti.
 
 ## Predlog demonstracije za Dejana — 5 minuta
 
 1. **Kupac → Naše uniforme:** pokažite odobrene modele, oznaku personalizacije i ugovorenu demo cenu. Za recepcijski model unesite, na primer, 4 komada M i 6 komada L.
 2. **Korpa:** izaberite lokaciju isporuke, unesite referencu, potvrdite specifikaciju i pošaljite demo porudžbinu.
 3. **Administracija → Porudžbine:** otvorite novu porudžbinu, proverite veličine, promenite status u Potvrđena i sačuvajte.
-4. **Prikaz kupca → Moje porudžbine:** pogledajte promenjeni status. Dugme Ponovi vraća stavke u korpu po aktuelnim demo cenama.
-5. **Administracija → Pilot i aktivacija:** pokažite kako bi mali početni krug kupaca mogao da se prati po aktivaciji, prvoj i ponovljenoj nabavci. Podaci su ilustrativni, a probne porudžbine menjaju pregled.
+4. **Prikaz kupca → Moje porudžbine:** pogledajte promenjeni status. Otvorite detalje porudžbine; dugme **Ponovi porudžbinu** vraća stavke u korpu po aktuelnim demo cenama.
+5. **Odjavite se → nova demo prijava:** unesite bilo koje ime i lozinku, pa izaberite drugi hotel, restoran ili wellness centar. Pokažite njegove modele, cene, istoriju nabavke i zasebnu korpu.
 
 Za drugi scenario otvorite **Ponude i zahtevi**: kupac sačuva zahtev, administrator pripremi cenu i pošalje demo ponudu, a kupac je prihvati i kreira porudžbinu.
 
@@ -39,9 +39,9 @@ Za drugi scenario otvorite **Ponude i zahtevi**: kupac sačuva zahtev, administr
 - Probne porudžbine, detalji, statusi, ponovno poručivanje i izvoz CSV pregleda.
 - Zahtevi za ponudu, administratorska priprema ponude i prihvatanje na nalogu kupca.
 - Uvoz CSV, TXT, XML i jednostavnog XLSX spiska sa pregledom i validacijom pre dodavanja u korpu.
-- Dokument porudžbine u HTML formatu sa dugmetom Štampaj / Sačuvaj kao PDF.
+- Pregled dokumenta porudžbine u portalu, sa dugmetom Štampaj / Sačuvaj kao PDF i izvozom stavki u CSV.
 - Administracija porudžbina, demo kupaca, ukupnih zaliha, rabata i rokova plaćanja.
-- Pilot grupa: izbor kupaca, simulacija poziva i aktivacije, prva i ponovljena nabavka.
+- Demo prijava sa proizvoljnim korisničkim imenom i lozinkom, izbor pet aktivnih kupaca i odjava. Svaki nalog ima primer porudžbine.
 - Prikaz za računar i telefon, tastaturna navigacija, fokus u dijalozima i lokalno čuvanje demo izmena.
 
 ## Uvoz podataka
@@ -72,13 +72,13 @@ Nazivi, fotografije i kratki opisi proizvoda preuzeti su sa **hotelskaoprema.rs*
 
 Portal je prototip: nema stvarne autentifikacije, finansijske obaveze, naplate, slanja email poruka, ERP veze, rezervacije zaliha ni rada više stvarnih korisnika. Dugmad za „slanje” čuvaju demo podatke samo u pregledaču. Administracija je javno otvorena radi prezentacije i ne predstavlja produkcionu kontrolu pristupa.
 
-Izmene se čuvaju u `localStorage` istog pregledača. Ne sinhronizuju se između uređaja ili pregledača. Ako pregledač zabrani lokalno čuvanje, demo radi do zatvaranja stranice i prikazuje obaveštenje. Za početno stanje otvorite **Pomoć i podrška → Vrati početni demo**.
+Izmene se čuvaju u `localStorage` istog pregledača, pod ključem `hotelska-oprema-partner-v4`. Sesija demo prijave čuva se u `sessionStorage`; korisničko ime i lozinka se ne čuvaju. Ova verzija započinje sopstveni skup početnih demo podataka. Ne sinhronizuju se između uređaja ili pregledača. Ako pregledač zabrani lokalno čuvanje, demo radi do zatvaranja stranice i prikazuje obaveštenje. Za početno stanje otvorite **Pomoć i podrška → Vrati početni demo**.
 
 ## Fajlovi
 
 - `index.html` — početna stranica.
 - `styles.css` — responzivan vizuelni sistem.
-- `data.js` — katalog i početni demo podaci.
+- `data.js` — katalog, početni demo podaci i ugrađene fotografije/logotip.
 - `app.js` — funkcionalnosti portala i administracije.
 - `assets/` — originalni logo i lokalne fotografije.
 - `templates/` — primeri uvoza.
